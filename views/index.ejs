@@ -1,0 +1,37 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        background-color: #1c1321;
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        text-align: center;
+        line-height: 50px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: yellow;
+    }
+    a{
+        font-size: 20px;
+        margin: 10px 0;
+        color: white;
+    }
+</style>
+
+<div>
+    <% if (login) { %>
+        <h1>holiii: <strong><%= name %></strong></h1>
+        <a href="logout" class="a-logout">Logout</a>
+    <% } else { %>
+        <h1><strong><%= name %></strong></h1>
+        <a href="login" class="a-login">Ir login</a>
+    <% } %>
+</div>

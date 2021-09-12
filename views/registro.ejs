@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style/style.css">
+    <title>Document</title>
+</head>
+    <body>
+        <div class="registro">
+            <h2>Registrate</h2>
+            <form action="/registro" method="POST"> 
+                <div class="grupo">
+                    <input class="inputs" type="email" name="email" required>
+                    <span class="barra"></span>
+                    <label class="label" for=""><i class="far fa-user-circle"></i>Email</label>
+                </div>
+
+                <div class="grupo">
+                    <input class="inputs" type="text" name="user" required>
+                    <span class="barra"></span>
+                    <label class="label" for=""><i class="far fa-user-circle"></i>Usuario</label>
+                </div>
+
+                <div class="grupo">
+                    <input class="inputs" type="text" name="name" required>
+                    <span class="barra"></span>
+                    <label class="label" for=""><i class="far fa-user-circle"></i>Nombre</label>
+                </div>
+
+                <div class="grupo">
+                    <select name="rol" id="rol" class="rol"> 
+                        <option value="admin" selected>Admin</option>
+                        <option value="data ntry" selected>Data Entry</option>
+                    </select>
+                </div>
+
+                <div class="grupo">
+                    <input class="inputs" type="password" name="pass" required>
+                    <span class="barra"></span>
+                    <label class="label" for=""><i class="fas fa-unlock-alt"></i>Contraseña</label>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <a href="login" class="btn_registro">Login</a>
+        </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <% if(typeof alert != "undefined"){ %>
+            <script>
+                Swal.fire({
+                    title:'<%= alertTitle %>',
+                    text:'<%= alertMessage %>',
+                    icon:'<%= alertIcon %>',
+                    showConfirmButton: <%= showConfirmButton %>,
+                    timer: <%= timer %>
+                }).then(()=>{
+                    window.location='<%= ruta %>';
+                })
+            </script>
+            <% } %>
+
+        <script src="resources/main.js"></script>
+    </body>
+</html>
